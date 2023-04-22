@@ -32,8 +32,12 @@ public class TinkoffListItemView: UIView {
 	}()
 
 
+	private let offset: CGFloat
+
+
 	// Initializers
-	public init(style: TinkoffListItemStyle) {
+	public init(offset: CGFloat = 10, style: TinkoffListItemStyle) {
+		self.offset = offset
 		super.init(frame: .zero)
 
 		setup(style: style)
@@ -64,17 +68,17 @@ public class TinkoffListItemView: UIView {
 		case .row:
 			NSLayoutConstraint.activate([
 				imageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
-				imageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
+				imageView.topAnchor.constraint(equalTo: self.topAnchor, constant: offset),
 				imageView.widthAnchor.constraint(equalToConstant: 40),
 				imageView.heightAnchor.constraint(equalToConstant: 40),
-				imageView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10),
+				imageView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -offset),
 
-				titleLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 20),
+				titleLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 16),
 				titleLabel.topAnchor.constraint(equalTo: imageView.topAnchor),
 				descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor),
 				descriptionLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
 				descriptionLabel.bottomAnchor.constraint(equalTo: imageView.bottomAnchor),
-				titleLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
+				titleLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -offset * 1.6),
 				descriptionLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor)
 			])
 		case .square:

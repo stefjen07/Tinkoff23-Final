@@ -88,6 +88,8 @@ public class TinkoffCardView: UIView {
 	public func addButton(target: Any?, action: Selector) {
 		button.addTarget(target, action: action, for: .primaryActionTriggered)
 
+		stackView.removeLastArrangedSubview()
+		stackView.addSpacer(8)
 		stackView.addArrangedSubview(button)
 		stackView.addSpacer(18)
 
@@ -112,7 +114,7 @@ public class TinkoffCardView: UIView {
 
 		contentView.addSubview(imageView)
 
-		stackView.addSpacer(8)
+		stackView.addSpacer(18)
 	}
 
 	func makeConstraints() {

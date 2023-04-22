@@ -85,6 +85,20 @@ public class TinkoffHorizontalListView: UIView {
 		self.listStackView.removeLastArrangedSubview()
 	}
 
+	public func addPrimaryButton(target: Any?, action: Selector) {
+		primaryButton.addTarget(target, action: action, for: .primaryActionTriggered)
+
+		stackView.removeLastArrangedSubview()
+		stackView.addSpacer(20)
+		stackView.addArrangedSubview(primaryButton)
+		stackView.addSpacer(18)
+
+		NSLayoutConstraint.activate([
+			primaryButton.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 20),
+			primaryButton.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -20),
+		])
+	}
+
 	// Setup functions
 	func addSubviews() {
 		addSubview(stackView)
@@ -98,8 +112,6 @@ public class TinkoffHorizontalListView: UIView {
 		stackView.addArrangedSubview(headerView)
 		stackView.addSpacer(12)
 		stackView.addArrangedSubview(listScrollView)
-		stackView.addSpacer(20)
-		stackView.addArrangedSubview(primaryButton)
 		stackView.addSpacer(18)
 	}
 
@@ -110,6 +122,9 @@ public class TinkoffHorizontalListView: UIView {
 		listStackView.translatesAutoresizingMaskIntoConstraints = false
 		primaryButton.translatesAutoresizingMaskIntoConstraints = false
 		secondaryButton.translatesAutoresizingMaskIntoConstraints = false
+
+		stackView.layoutMargins = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+
 		NSLayoutConstraint.activate([
 			headerLabel.topAnchor.constraint(equalTo: headerView.topAnchor),
 			headerLabel.leadingAnchor.constraint(equalTo: headerView.leadingAnchor),
@@ -126,9 +141,6 @@ public class TinkoffHorizontalListView: UIView {
 			listStackView.topAnchor.constraint(equalTo: listScrollView.topAnchor),
 			listStackView.bottomAnchor.constraint(equalTo: listScrollView.bottomAnchor),
 			listStackView.trailingAnchor.constraint(equalTo: listScrollView.trailingAnchor),
-
-			primaryButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
-			primaryButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
 		])
 
 		NSLayoutConstraint.activate([

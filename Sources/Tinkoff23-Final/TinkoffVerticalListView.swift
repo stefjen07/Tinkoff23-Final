@@ -76,6 +76,20 @@ public class TinkoffVerticalListView: UIView {
 		}
 	}
 
+	public func addPrimaryButton(target: Any?, action: Selector) {
+		primaryButton.addTarget(target, action: action, for: .primaryActionTriggered)
+
+		stackView.removeLastArrangedSubview()
+		stackView.addSpacer(8)
+		stackView.addArrangedSubview(primaryButton)
+		stackView.addSpacer(18)
+
+		NSLayoutConstraint.activate([
+			primaryButton.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 20),
+			primaryButton.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -20),
+		])
+	}
+
 
 	public override func layoutSubviews() {
 		super.layoutSubviews()
@@ -98,8 +112,6 @@ public class TinkoffVerticalListView: UIView {
 		stackView.addSpacer(8)
 		stackView.addArrangedSubview(listStackView)
 		stackView.addSpacer(8)
-		stackView.addArrangedSubview(primaryButton)
-		stackView.addSpacer(18)
 	}
 
 	func makeConstraints() {
@@ -121,9 +133,6 @@ public class TinkoffVerticalListView: UIView {
 
 			listStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
 			listStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-
-			primaryButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
-			primaryButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
 		])
 
 		NSLayoutConstraint.activate([
