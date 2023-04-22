@@ -53,8 +53,8 @@
 		3EA47C0D29F3E23E0091AE90 /* TestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		3EA47C1629F3E2500091AE90 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3EA47C2429F401400091AE90 /* ExampleTinkoffListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleTinkoffListItem.swift; sourceTree = "<group>"; };
-		3EA47C2F29F41CA20091AE90 /* Tinkoff23-Final */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "Tinkoff23-Final"; path = "../Tinkoff23-Final"; sourceTree = "<group>"; };
 		3EA47C3329F41F3B0091AE90 /* UIStackView+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStackView+extension.swift"; sourceTree = "<group>"; };
+		3EA47C3629F426740091AE90 /* Tinkoff23-Final */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "Tinkoff23-Final"; path = ..; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,7 +86,7 @@
 		3EA47BD029F3DDFE0091AE90 = {
 			isa = PBXGroup;
 			children = (
-				3EA47C2E29F41CA20091AE90 /* Packages */,
+				3EA47C3529F426740091AE90 /* Packages */,
 				3EA47BDB29F3DDFE0091AE90 /* Test1 */,
 				3EA47BF229F3DDFF0091AE90 /* Test1Tests */,
 				3EA47BFC29F3DDFF0091AE90 /* Test1UITests */,
@@ -138,19 +138,19 @@
 			path = Test1UITests;
 			sourceTree = "<group>";
 		};
-		3EA47C2E29F41CA20091AE90 /* Packages */ = {
-			isa = PBXGroup;
-			children = (
-				3EA47C2F29F41CA20091AE90 /* Tinkoff23-Final */,
-			);
-			name = Packages;
-			sourceTree = "<group>";
-		};
 		3EA47C3029F41CF60091AE90 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3EA47C3529F426740091AE90 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				3EA47C3629F426740091AE90 /* Tinkoff23-Final */,
+			);
+			name = Packages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
